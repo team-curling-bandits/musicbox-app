@@ -1,27 +1,19 @@
 import VueRouter from 'vue-router';
-import Home from './components/Home.vue';
-import About from './components/About.vue';
-import Quadrants from './components/Quadrants.vue';
-import QuadrantDetail from './components/QuadrantDetail.vue';
-import NeighborhoodsList from './components/NeighborhoodsList.vue';
-import NeighborhoodsMap from './components/NeighborhoodsMap.vue';
-import NewNeighborhood from './components/NewNeighborhood.vue';
+import Home from './components/Home';
+import About from './components/About';
+import Public from './components/Public';
+import User from './components/User';
+import News from './components/News';
+import Login from './components/Login';
 
 export default new VueRouter({
   routes: [
     { path: '/', component: Home },
     { path: '/about', component: About },
-    { path: '/whatever', component: Quadrants },
-    { 
-      path: '/quadrants/:id', 
-      component: QuadrantDetail,
-      children: [
-        { path: 'list', component: NeighborhoodsList },
-        { path: 'map', component: NeighborhoodsMap },
-        { path: 'new', component: NewNeighborhood },
-        { path: '', redirect: 'list' }
-      ]
-    },
+    { path: '/public', component: Public },
+    { path: '/user', component: User },
+    { path: '/news', component: News },
+    { path: '/login', component: Login },
     { path: '*', redirect: '/' }
   ]
 });

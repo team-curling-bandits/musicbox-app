@@ -33,7 +33,7 @@ export default {
         this.song = song;
       });
   }
-}
+};
 </script>
 
 <style>

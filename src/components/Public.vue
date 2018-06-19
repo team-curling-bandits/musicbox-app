@@ -1,25 +1,40 @@
 <template>
   <div>
     <h1>Public page</h1>
+    <form class="search" @submit.prevent="handleSubmit">
+      <input type="text" v-model="song">
+      <button
+        type="submit">submit</button>
+    </form>
     <div class="music-player">
-      <h2>Song: Say It Ain't So</h2>
-      <h3>Artist: Weezer</h3>
-      <h3>Album: Weezer (Blue Album)(Deluxe Edition)</h3>
-      <audio controls>
-        <!--example song, soon to be dynamic-->
-        <source src="http://listen.vo.llnwd.net/g2/4/2/4/9/8/911189424.mp3">
+      <h2>{{ track.name }}</h2>
+      <h3>{{ track.artistName }}</h3>
+      <h3>{{ track.albumName }}</h3>
+      <audio controls v-if="track" :src="track.previewURL">
       </audio>
     </div>
+    <ul>
+      <li 
+        :key="music.id"
+        v-for="music in musicList"
+        @click="track = music"
+      >
+        <strong>{{ music.name }}</strong>
+        {{ music.artistName }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import { getMusic } from '../services/api';
+import { getMusic, searchSong } from '../services/api';
 
 export default {
   data() {
     return {
-      musiclist: null
+      musicList: null,
+      song: '',
+      track: ''
     };
   },
   created() {
@@ -28,6 +43,15 @@ export default {
         this.musiclist = musiclist;
       })
       .catch(console.log('error'));
+  },
+  methods: {
+    handleSubmit() {
+      console.log(this.song);
+      searchSong(this.song)
+        .then(res => {
+          this.musicList = res.search.data.tracks;
+        });
+    }
   }
 };
 </script>
@@ -37,6 +61,13 @@ export default {
   margin: auto;
   width: 300px;
   height: 300px;
-  
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 </style>

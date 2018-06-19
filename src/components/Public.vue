@@ -55,7 +55,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .music-player {
   margin: auto;
   width: 300px;

@@ -9,10 +9,11 @@
     <div class="music-player">
       <h2>{{ track.name }}</h2>
       <h3>{{ track.artistName }}</h3>
-      <h3>{{ track.albumName }}</h3>
-      <audio controls v-if="track" :src="track.previewURL">
-      </audio>
+      <h5>{{ track.albumName }}</h5>
+      <audio controls v-if="track" :src="track.previewURL"></audio>
+      <button @click="addToUser" v-if="track">Add to profile</button>
     </div>
+    <h2>Results:</h2>
     <ul>
       <li 
         :key="music.id"
@@ -27,26 +28,19 @@
 </template>
 
 <script>
-import { getMusic, searchSong } from '../services/api';
+import { searchSong } from '../services/api';
 
 export default {
   data() {
     return {
       musicList: null,
       song: '',
-      track: ''
+      track: '',
+      selected: null
     };
-  },
-  created() {
-    getMusic()
-      .then(musiclist => {
-        this.musiclist = musiclist;
-      })
-      .catch(console.log('error'));
   },
   methods: {
     handleSubmit() {
-      console.log(this.song);
       searchSong(this.song)
         .then(res => {
           this.musicList = res.search.data.tracks;
@@ -60,14 +54,19 @@ export default {
 .music-player {
   margin: auto;
   width: 300px;
-  height: 300px;
+  max-height: 300px;
 }
-
 ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  max-width: 500px;
+  margin: auto;
+}
+li:hover {
+  cursor: pointer;
+  background-color: rgba(211, 211, 211, 0.637)
 }
 </style>

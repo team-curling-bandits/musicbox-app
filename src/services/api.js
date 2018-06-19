@@ -8,10 +8,10 @@ export function getMusic() {
   });
 }
 
-export function searchArtist(artist) {
+export function searchSong(song) {
   /* eslint-disable-next-line */
   const apiKey = process.env.API_KEY;
-  const url = searchUrl + encodeURIComponent(artist) + '&type=artist&apikey=' + 'ZWQwYzkzOTctNzY5Ni00ZjkwLTkyODMtMDc3YTQwMDFmN2Y5';
+  const url = searchUrl + encodeURIComponent(song) + '&type=track&apikey=' + 'ZWQwYzkzOTctNzY5Ni00ZjkwLTkyODMtMDc3YTQwMDFmN2Y5';
   return fetch(url)
     .then(response => response.json());
 }

@@ -19,7 +19,8 @@
         v-for="music in musicList"
         @click="track = music"
       >
-      <strong>{{ music.name }}</strong> by {{ music.artistName }}
+        <strong>{{ music.name }}</strong>
+        {{ music.artistName }}
       </li>
     </ul>
   </div>
@@ -62,7 +63,11 @@ export default {
   height: 300px;
 }
 
-li {
+ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 </style>

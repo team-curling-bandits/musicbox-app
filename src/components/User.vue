@@ -2,7 +2,7 @@
   <div v-if="user" class="user">
     <h2>Saved by {{ user.name }}</h2>
     <ul>
-      <li :key="song.id" v-for="song in savedSongs">{{song.song_id}}</li>
+      <li :key="song.id" v-for="song in savedSongs"><strong>{{song.title}}</strong> by {{song.artist}}</li>
 
     </ul>
   </div>

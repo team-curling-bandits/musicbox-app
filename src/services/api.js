@@ -53,7 +53,7 @@ export function getUser(id) {
   return fetch(`${URL}/users/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
-    .then(responseHandler);
+    .then(responseHandler); 
 }
 
 export function getSavedSongs(id) {

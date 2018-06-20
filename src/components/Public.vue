@@ -49,10 +49,12 @@ export default {
         });
     },
     handleAdd(track) {
-      // console.log(this.track.id);
-      // console.log(this.user.id);
       track.userId = this.user.id;
       track.id = this.track.id;
+      track.artist = this.track.artistName;
+      track.title = this.track.name;
+      track.url = this.track.previewURL;
+
       return saveSong(track)
         .then(alert(this.track.name + ' Saved!'));
     }

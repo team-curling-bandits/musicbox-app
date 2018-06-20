@@ -14,7 +14,7 @@
     </ul>
 
     <router-view>
-
+      :users="users"
     </router-view>
   </div>
 </template>

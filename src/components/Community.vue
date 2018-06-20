@@ -32,6 +32,9 @@ export default {
     getUsers()
       .then(user => {
         this.users = user;
+      })
+      .catch(err => {
+        this.error = err;
       });
   }
 };

@@ -73,6 +73,14 @@ export function getSavedSong(id) {
     .then(responseHandler);
 }
 
+export function saveSong(song) {
+  return fetch(SAVEDSONGS_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(song)
+  })
+    .then(response => response.json());
+}
 
 export function signUp(credentials) {
   return fetch(`${AUTH_URL}/signup`, {

@@ -11,7 +11,7 @@
       <h3>{{ track.artistName }}</h3>
       <h5>{{ track.albumName }}</h5>
       <audio controls v-if="track" :src="track.previewURL"></audio>
-      <!-- <button @click="addToUser" v-if="track">Add to profile</button> -->
+      <button @click="handleAdd" v-if="track">Add to profile</button>
     </div>
     <h2>Results:</h2>
     <ul>
@@ -22,13 +22,14 @@
       >
         <strong>{{ music.name }}</strong>
         {{ music.artistName }}
+        {{ music.id }}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { searchSong } from '../services/api';
+import { searchSong, saveSong } from '../services/api';
 
 export default {
   data() {
@@ -44,6 +45,14 @@ export default {
       searchSong(this.song)
         .then(res => {
           this.musicList = res.search.data.tracks;
+        });
+    },
+    handleAdd(track) {
+      console.log(this.track.id);
+      track.trackId = this.song.id;
+      return saveSong(track)
+        .then(saved => {
+          this.$router.push(`/savedsongs/${saved.id}`);
         });
     }
   }

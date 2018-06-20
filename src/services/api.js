@@ -36,11 +36,8 @@ export function getMusic() {
     headers: { 'Content-Type': 'application/json' }
   });
 }
-
 export function searchSong(song) {
-  /* eslint-disable-next-line */
-  const apiKey = process.env.API_KEY;
-  const url = searchUrl + encodeURIComponent(song) + '&type=track&apikey=' + 'ZWQwYzkzOTctNzY5Ni00ZjkwLTkyODMtMDc3YTQwMDFmN2Y5';
+  const url = searchUrl + encodeURIComponent(song) + '&type=track&apikey=ZWQwYzkzOTctNzY5Ni00ZjkwLTkyODMtMDc3YTQwMDFmN2Y5';
   return fetch(url)
     .then(responseHandler);
 }

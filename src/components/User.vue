@@ -1,12 +1,12 @@
 <template>
-  <div v-if="songs !== null" class="user">
+  <div v-if="user" class="user">
     <h2>User Component</h2>
-    <nav>
+    <!-- <nav>
       <router-link to="/userprofile">User Profile</router-link>
       &nbsp;
       <router-link to="/otherprofiles">Other Profile</router-link>
-    </nav>
-    <h3>User Profile</h3>
+    </nav> -->
+    <h3>{{ user.name }}</h3>
     <ul>
       <li>Saved song</li>
       <li>Saved song</li>
@@ -19,18 +19,20 @@
 </template>
 
 <script>
-import { getSongs } from '../services/api';
+import { getUser, getSavedSongs, getSavedSong } from '../services/api';
 
 export default {
   data() {
     return {
-      songs: null
+      user: null,
+      // savedsong: null
     };
   },
   created() {
-    getSongs(this.$route.params.id)
-      .then(song => {
-        this.song = song;
+    getUser()
+      .then(user => {
+        this.user = user;
+        // this.savesong = user.savedsong;
       });
   }
 };

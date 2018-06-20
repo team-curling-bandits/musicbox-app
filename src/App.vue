@@ -64,6 +64,12 @@ export default {
   margin-top: 60px;
   border: 2px solid black;
 }
+
+/* Photo by Kat Jayne from Pexels */
+body {
+  background-image: url(../../images/bg-musicbox.jpg);
+}
+
 .nav {
   margin: 10px;
 }

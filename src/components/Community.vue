@@ -7,7 +7,7 @@
         v-for="user in users"
         :key="user.id"
       >
-        {{ user.id }}
+        {{ user.name }} {{ user.song_id }}
       </li>
     </ul>
   </div>

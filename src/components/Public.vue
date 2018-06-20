@@ -40,6 +40,7 @@ export default {
       selected: null
     };
   },
+  props: ['user'],
   methods: {
     handleSubmit() {
       searchSong(this.song)
@@ -48,8 +49,10 @@ export default {
         });
     },
     handleAdd(track) {
-      console.log(this.track.id);
-      track.trackId = this.song.id;
+      // console.log(this.track.id);
+      // console.log(this.user.id);
+      track.userId = this.user.id;
+      track.id = this.track.id;
       return saveSong(track)
         .then(saved => {
           this.$router.push(`/savedsongs/${saved.id}`);

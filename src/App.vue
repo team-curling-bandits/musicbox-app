@@ -6,6 +6,7 @@
     <router-link to="/about" class="nav">About Us</router-link>
     <router-link to="/public" class="nav">Public Page</router-link>
     <router-link to="/user" class="nav">Users Page</router-link>
+    <router-link to="/explore" class="nav">Explore</router-link>
     <router-link to="/news" class="nav">News</router-link>
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>

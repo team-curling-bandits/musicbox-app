@@ -10,9 +10,12 @@
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
+    <pre>{{user}}</pre>
     <hr>
 
-    <router-view></router-view>
+    <router-view :on-user="handleUser"
+    :user="user"
+    ></router-view>
 
   </div>
 </template>

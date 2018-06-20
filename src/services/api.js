@@ -3,7 +3,7 @@ const searchUrl = 'https://api.napster.com/v2.2/search?query=';
 const MUSICBOX_URL = `${URL}/musicbox`;
 const USERS_URL = `${URL}/users`;
 const SAVEDSONGS_URL = `${URL}/savedsongs`;
-const AUTH_URL = `${URL}/users`;
+const AUTH_URL = `${URL}/auth`;
 
 function responseHandler(response) {
   if(response.ok) return response.json();

@@ -7,9 +7,15 @@
         v-for="user in users"
         :key="user.id"
       >
+        <router-link :to="`/community/${user.id}`">
         {{ user.name }} {{ user.song_id }}
+        </router-link>
       </li>
     </ul>
+
+    <router-view>
+
+    </router-view>
   </div>
 </template>
 

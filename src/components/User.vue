@@ -6,7 +6,7 @@
       &nbsp;
       <router-link to="/otherprofiles">Other Profile</router-link>
     </nav> -->
-    <h3>{{ user.email }}</h3>
+    <h3>{{ user.name }}</h3>
     <ul>
       <li>Saved song</li>
       <li>Saved song</li>
@@ -15,6 +15,9 @@
     <router-view>
    
     </router-view>
+  </div>
+  <div v-else class="user">
+    <p>Please <router-link to="/login">sign in</router-link> to view your profile</p>
   </div>
 </template>
 

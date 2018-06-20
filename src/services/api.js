@@ -1,5 +1,6 @@
 const URL = 'http://localhost:3000/api';
 const searchUrl = 'https://api.napster.com/v2.2/search?query=';
+const newsUrl = 'https://newsapi.org/v2/everything?sources=entertainment-weekly&q=music&apiKey=9fa47f32b7bd438a93898938d10d85ad';
 const MUSICBOX_URL = `${URL}/musicbox`;
 const USERS_URL = `${URL}/users`;
 const SAVEDSONGS_URL = `${URL}/savedsongs`;
@@ -39,6 +40,11 @@ export function getMusic() {
 export function searchSong(song) {
   const url = searchUrl + encodeURIComponent(song) + '&type=track&apikey=ZWQwYzkzOTctNzY5Ni00ZjkwLTkyODMtMDc3YTQwMDFmN2Y5';
   return fetch(url)
+    .then(responseHandler);
+}
+
+export function getNews() {
+  return fetch(newsUrl)
     .then(responseHandler);
 }
 

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>What's New in the world of Music?</h2>
+    <h2>Muzak Nues</h2>
     <hr> 
-    
+    <ul></ul>
   </div>
 </template>
 

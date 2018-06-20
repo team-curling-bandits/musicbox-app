@@ -2,13 +2,36 @@
   <div>
     <h2>Muzak Nues</h2>
     <hr> 
-    <ul></ul>
+    <ul>
+      <li
+        v-for="article in newsList"
+        :key="article.url"
+      >
+      {{ article.title }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import { getNews } from '../services/api';
 export default {
-
+  data() {
+    return {
+      newsList: null,
+    };
+  },
+  methods: {
+    handleNews() {
+      getNews()
+        .then(res => {
+          this.newsList = res.articles;
+        });
+    }
+  },
+  created() {
+    this.handleNews();
+  }
 };
 </script>
 

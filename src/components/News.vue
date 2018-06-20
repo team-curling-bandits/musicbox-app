@@ -6,9 +6,9 @@
       <li
         v-for="article in newsList"
         :key="article.url"
-        @click="handleNewsLink"
       >
-      {{ article.title }}
+      <a :href="article.url">{{ article.title }}</a>
+      <img :src="article.urlToImage">
       </li>
     </ul>
   </div>
@@ -30,7 +30,7 @@ export default {
         });
     },
     handleNewsLink() {
-      
+
     }
   },
   created() {
@@ -42,5 +42,8 @@ export default {
 <style scoped>
 hr {
   width: 600px;
+}
+img {
+  width: 150px;
 }
 </style>

@@ -54,9 +54,7 @@ export default {
       track.userId = this.user.id;
       track.id = this.track.id;
       return saveSong(track)
-        .then(saved => {
-          this.$router.push(`/savedsongs/${saved.id}`);
-        });
+        .then(alert(this.track.name + ' Saved!'));
     }
   }
 };

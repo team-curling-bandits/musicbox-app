@@ -56,8 +56,8 @@ export function getUser(id) {
     .then(responseHandler);
 }
 
-export function getSavedSongs() {
-  return fetch(SAVEDSONGS_URL, {
+export function getSavedSongs(id) {
+  return fetch(`${SAVEDSONGS_URL}/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
     .then(responseHandler);

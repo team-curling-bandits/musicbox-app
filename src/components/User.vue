@@ -1,20 +1,10 @@
 <template>
   <div v-if="user" class="user">
-    <h2>User Component</h2>
-    <!-- <nav>
-      <router-link to="/userprofile">User Profile</router-link>
-      &nbsp;
-      <router-link to="/otherprofiles">Other Profile</router-link>
-    </nav> -->
-    <h3>{{ user.name }}</h3>
+    <h2>Saved by {{ user.name }}</h2>
     <ul>
-      <li>Saved song</li>
-      <li>Saved song</li>
-      <li>Saved song</li>
+      <li :key="song.id" v-for="song in savedSongs">{{song.song_id}}</li>
+
     </ul>
-    <router-view>
-   
-    </router-view>
   </div>
   <div v-else class="user">
     <p>Please <router-link to="/login">sign in</router-link> to view your profile</p>
@@ -22,23 +12,20 @@
 </template>
 
 <script>
-// import { getUser, getSavedSongs, getSavedSong } from '../services/api';
-
+import { getSavedSongs } from '../services/api';
 export default {
   data() {
     return {
-      
-      // savedsong: null
+      savedSongs: null
     };
   },
-  props: ['user']
-  // created() {
-  //   getUser()
-  //     .then(user => {
-  //       this.user = user;
-  //       // this.savesong = user.savedsong;
-  //     });
-  // }
+  props: ['user'],
+  created() {
+    getSavedSongs(this.user.id) 
+      .then(songs => {
+        this.savedSongs = songs;
+      });
+  }
 };
 </script>
 

@@ -52,8 +52,8 @@ export function getUsers() {
     .then(responseHandler);
 }
 
-export function getUser() {
-  return fetch(`${URL}/users/1`, {
+export function getUser(id) {
+  return fetch(`${URL}/users/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
     .then(responseHandler);
@@ -73,6 +73,14 @@ export function getSavedSong(id) {
     .then(responseHandler);
 }
 
+export function saveSong(song) {
+  return fetch(SAVEDSONGS_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(song)
+  })
+    .then(responseHandler);
+}
 
 export function signUp(credentials) {
   return fetch(`${AUTH_URL}/signup`, {

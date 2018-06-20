@@ -11,7 +11,7 @@
       <h3>{{ track.artistName }}</h3>
       <h5>{{ track.albumName }}</h5>
       <audio controls v-if="track" :src="track.previewURL"></audio>
-      <button @click="addToUser" v-if="track">Add to profile</button>
+      <!-- <button @click="addToUser" v-if="track">Add to profile</button> -->
     </div>
     <h2>Results:</h2>
     <ul>

@@ -12,6 +12,25 @@ function responseHandler(response) {
   });
 }
 
+function getHeaders(hasBody) {
+  const headers = {};
+  if(hasBody) {
+    headers['Content-Type'] = 'application/json';
+  }
+
+  const user = localStorage.user;
+  if(user) {
+    try {
+      headers['Authorization'] = JSON.parse(user).id;
+    }
+    catch (err) {
+      localStorage.removeItem('user');
+    }
+  }
+
+  return headers;
+}
+
 export function getMusic() {
   return fetch(MUSICBOX_URL, {
     headers: { 'Content-Type': 'application/json' }
@@ -54,24 +73,7 @@ export function getSavedSong(id) {
     .then(responseHandler);
 }
 
-function getHeaders(hasBody) {
-  const headers = {};
-  if(hasBody) {
-    headers['Content-Type'] = 'application/json';
-  }
 
-  const user = localStorage.user;
-  if(user) {
-    try {
-      headers['Authorization'] = JSON.parse(user).id;
-    }
-    catch (err) {
-      localStorage.removeItem('user');
-    }
-  }
-
-  return headers;
-}
 export function signUp(credentials) {
   return fetch(`${AUTH_URL}/signup`, {
     method: 'POST',

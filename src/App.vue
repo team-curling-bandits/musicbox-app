@@ -7,7 +7,8 @@
     <router-link to="/public" class="nav">Public Page</router-link>
     <router-link to="/user" class="nav">Users Page</router-link>
     <router-link to="/news" class="nav">News</router-link>
-    <router-link to="/login" class="nav">Login / SignUp</router-link>
+    <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
+      <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
     <hr>
 
@@ -18,8 +19,33 @@
 
 <script>
 
-
 export default {
+  data() {
+    return {
+      user: null
+    };
+  },
+  created() {
+    const raw = localStorage.user;
+    if(raw) {
+      try {
+        this.user = JSON.parse(raw);
+      }
+      catch (err) {
+        localStorage.removeItem('user');
+      }
+    }
+  },
+  methods: {
+    handleUser(user) {
+      this.user = user;
+      localStorage.user = JSON.stringify(user);
+    },
+    handleLogout() {
+      localStorage.removeItem('user');
+      this.user = null;
+    }
+  }
   
 };
 </script>

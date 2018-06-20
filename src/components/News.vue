@@ -6,6 +6,7 @@
       <li
         v-for="article in newsList"
         :key="article.url"
+        @click="handleNewsLink"
       >
       {{ article.title }}
       </li>
@@ -27,6 +28,9 @@ export default {
         .then(res => {
           this.newsList = res.articles;
         });
+    },
+    handleNewsLink() {
+      
     }
   },
   created() {

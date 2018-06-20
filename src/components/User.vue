@@ -6,7 +6,7 @@
       &nbsp;
       <router-link to="/otherprofiles">Other Profile</router-link>
     </nav> -->
-    <h3>{{ user.name }}</h3>
+    <h3>{{ user.email }}</h3>
     <ul>
       <li>Saved song</li>
       <li>Saved song</li>
@@ -19,22 +19,23 @@
 </template>
 
 <script>
-import { getUser, getSavedSongs, getSavedSong } from '../services/api';
+// import { getUser, getSavedSongs, getSavedSong } from '../services/api';
 
 export default {
   data() {
     return {
-      user: null,
+      
       // savedsong: null
     };
   },
-  created() {
-    getUser()
-      .then(user => {
-        this.user = user;
-        // this.savesong = user.savedsong;
-      });
-  }
+  props: ['user']
+  // created() {
+  //   getUser()
+  //     .then(user => {
+  //       this.user = user;
+  //       // this.savesong = user.savedsong;
+  //     });
+  // }
 };
 </script>
 

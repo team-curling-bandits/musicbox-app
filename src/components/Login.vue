@@ -37,6 +37,10 @@
 
 <script>
 import FormControl from './FormControl';
+import { signUp, signIn } from '../services/api';
+/* eslint-disable-next-line */
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 export default {
   components: {
     FormControl
@@ -64,7 +68,18 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log('submit');
+      if(!emailRegex.test(this.credentials.email)) {
+        this.error = 'email not valid';
+        return;
+      }
+      this.error = null;
+      const action = this.isSignUp ? signUp : signIn;
+      action(this.credentials)
+        .then(user => {
+          this.onUser(user);
+          this.$router.push('/user');
+        })
+        .catch(err => this.error = err);
     }
   }
 };

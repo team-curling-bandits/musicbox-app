@@ -3,7 +3,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Public from './components/Public';
 import User from './components/User';
-import Explore from './components/Explore';
+import Community from './components/Community';
 import News from './components/News';
 import Login from './components/Login';
 
@@ -13,7 +13,7 @@ export default new VueRouter({
     { path: '/about', component: About },
     { path: '/public', component: Public },
     { path: '/user', component: User },
-    { path: '/explore', component: Explore },
+    { path: '/community', component: Community },
     { path: '/news', component: News },
     { path: '/login', component: Login },
     { path: '*', redirect: '/' }

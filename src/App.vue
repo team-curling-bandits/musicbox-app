@@ -3,7 +3,7 @@
     <nav>
     <router-link to="/" class="nav" id="home">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
-    <router-link to="/public" class="nav">Public Page</router-link>
+    <router-link to="/browse" class="nav">Browse</router-link>
     <router-link to="/user" class="nav">Users Page</router-link>
     <router-link to="/community" class="nav">Community</router-link>
     <router-link to="/news" class="nav">News</router-link>
@@ -11,7 +11,6 @@
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
     <h1 class="musicbox">Music<span>Box</span></h1>
-    <!-- <pre>{{user}}</pre> -->
 
     <router-view :on-user="handleUser"
     :user="user"
@@ -63,7 +62,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 30px;
-  /* border: 2px solid black; */
 }
 
 .musicbox {

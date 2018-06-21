@@ -22,7 +22,6 @@
       >
         <strong>{{ music.name }}</strong>
         {{ music.artistName }}
-        {{ music.id }}
       </li>
     </ul>
   </div>

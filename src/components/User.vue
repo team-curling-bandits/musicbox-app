@@ -1,8 +1,20 @@
 <template>
   <div v-if="user" class="user">
     <h2>Saved by {{ user.name }}</h2>
+        <div class="music-player">
+      <h2>{{ track.name }}</h2>
+      <h3>{{ track.artistName }}</h3>
+      <h5>{{ track.albumName }}</h5>
+      <audio controls v-if="track" :src="track.url"></audio>
+      <button @click="handleDelete" v-if="track">Delete Song from list</button>
+    </div>
     <ul>
-      <li :key="song.id" v-for="song in savedSongs"><strong>{{song.title}}</strong> by {{song.artist}}</li>
+      <li 
+      :key="song.id" 
+      v-for="song in savedSongs"
+      @click="track = song"
+      >
+      <strong>{{song.title}}</strong> by {{song.artist}}</li>
 
     </ul>
   </div>
@@ -12,11 +24,12 @@
 </template>
 
 <script>
-import { getSavedSongs } from '../services/api';
+import { getSavedSongs, deleteSong } from '../services/api';
 export default {
   data() {
     return {
-      savedSongs: null
+      savedSongs: null,
+      track: ''
     };
   },
   props: ['user'],
@@ -25,6 +38,26 @@ export default {
       .then(songs => {
         this.savedSongs = songs;
       });
+  },
+  methods: {
+    handleDelete() {
+      if(confirm('Are you sure you want to delete?')) {
+        deleteSong(this.track.id)
+          .then(res => {
+            if(res.removed) {
+              this.track = '';
+              getSavedSongs(this.user.id)
+                .then(songs => {
+                  this.savedSongs = songs;
+                });
+            }
+          })
+          .catch(err => {
+            this.error = err;
+          });
+      }
+      
+    }
   }
 };
 </script>

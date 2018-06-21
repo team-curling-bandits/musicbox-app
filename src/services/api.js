@@ -62,6 +62,13 @@ export function getSavedSongs(id) {
   })
     .then(responseHandler);
 }
+export function deleteSong(id) {
+  return fetch(`${SAVEDSONGS_URL}/${id}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(responseHandler);
+}
 
 export function getSavedSong(id) {
   return fetch(`${URL}/savedsongs/${id}`, {

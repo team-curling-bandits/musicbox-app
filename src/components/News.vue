@@ -7,10 +7,11 @@
         v-for="article in newsList"
         :key="article.url"
       >
-      <a :href="article.url">{{ article.title }}</a>
+      <a target="_blank" :href="article.url">{{ article.title }}</a>
       <img :src="article.urlToImage">
       </li>
     </ul>
+    <p>Powered by <a target="_blank" href="https://newsapi.org">NewsAPI.org</a></p>
   </div>
 </template>
 

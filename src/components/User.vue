@@ -2,9 +2,9 @@
   <div v-if="user" class="user">
     <h2>Saved by {{ user.name }}</h2>
         <div class="music-player">
-      <h2>{{ track.name }}</h2>
-      <h3>{{ track.artistName }}</h3>
-      <h5>{{ track.albumName }}</h5>
+      <h3>{{ track.title }}</h3>
+      <h3>{{ track.artist }}</h3>
+      
       <audio controls v-if="track" :src="track.url"></audio>
       <button @click="handleDelete" v-if="track">Delete Song from list</button>
     </div>

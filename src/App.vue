@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Music Box</h1>
+    <h1>Music<span>Box</span></h1>
     <nav>
     <router-link to="/" class="nav">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
@@ -12,7 +12,6 @@
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
     <pre>{{user}}</pre>
-    <hr>
 
     <router-view :on-user="handleUser"
     :user="user"
@@ -57,13 +56,21 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+}
+
+span {
+  border: 4px solid #2c3e50;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin: 2px;
 }
 
 .nav {

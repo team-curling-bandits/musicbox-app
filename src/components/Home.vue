@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Home Component: Music Box App</h1>
-    <p>Hello World! Please excuse our pixie dust...</p>
+    <h1>Welcome to MusicBox!</h1>
+    <p>Please excuse our pixie dust...</p>
     <p>Click <router-link to="/public">here</router-link> to get started!</p>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div>
     <h1>Public page</h1>
     <form class="search" @submit.prevent="handleSubmit">
-      <input type="text" v-model="song">
+      <input type="text" v-model="song" placeholder="search for songs, albums, or artists">
       <button
         type="submit">submit</button>
     </form>
@@ -68,6 +68,11 @@ export default {
   width: 300px;
   max-height: 300px;
 }
+
+input {
+  width: 200px;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -77,6 +82,7 @@ ul {
   max-width: 500px;
   margin: auto;
 }
+
 li:hover {
   cursor: pointer;
   background-color: rgba(211, 211, 211, 0.637)

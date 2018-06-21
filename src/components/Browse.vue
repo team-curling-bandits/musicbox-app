@@ -7,14 +7,21 @@
         type="submit">search</button>
     </form>
     <div class="music-player">
-      <h2>{{ track.name }}</h2>
-      <h3>{{ track.artistName }}</h3>
-      <h5>{{ track.albumName }}</h5>
+
+      <h3>Now Playing: </h3>
+      <div v-if="track" class="music-info">
+        <ul class="info-list">
+          <li><b>Title:</b> {{ track.name }}</li>
+          <li><b>Artist:</b> {{ track.artistName }}</li>
+          <li><b>Album:</b> {{ track.albumName }}</li>
+        </ul>
+      </div>
+      
       <audio controls v-if="track" :src="track.previewURL"></audio>
       <button @click="handleAdd" v-if="track">Add to profile</button>
     </div>
     <h2>Results:</h2>
-    <ul>
+    <ul class="results">
       <li 
         :key="music.id"
         v-for="music in musicList"
@@ -64,7 +71,7 @@ export default {
 <style>
 .music-player {
   margin: auto;
-  width: 300px;
+  width: 350px;
   max-height: 300px;
 }
 
@@ -80,6 +87,16 @@ ul {
   justify-content: center;
   max-width: 500px;
   margin: auto;
+}
+
+.music-info {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.info-list {
+  line-height: 20px;
+  margin-top: 4px;
 }
 
 li:hover {

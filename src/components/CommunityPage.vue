@@ -3,14 +3,18 @@
     <h2>Community Page Component</h2>
 
     <h3></h3>
-    <audio controls v-if="track" :src="track.url"></audio>
+    <div>
+      <h3>{{ track.title }}</h3>
+      <h3>{{ track.artist }}</h3>
+      <audio controls v-if="track" :src="track.url"></audio>
+    </div>
     <ul>
       <li 
         :key="song.id" 
         v-for="song in savedSongs"
         @click="track = song"
         >
-        {{song.title}}
+        <strong>{{song.title}}</strong> by {{ song.artist }}
         </li>
     </ul>
   </div>

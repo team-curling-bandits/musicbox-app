@@ -71,6 +71,8 @@ export default {
   margin: 0 auto;
   text-align: left;
   width: 80%;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .bio-column {
@@ -86,8 +88,9 @@ h3 {
 
 img {
   object-fit: contain;
-  width: 200px;
+  width: 150px;
   border-radius: 100px;
+  margin-right: 25px;
 }
 
 h3, img {

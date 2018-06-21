@@ -62,8 +62,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .user {
   text-align: center;
+}
+
+a {
+  color: white;
 }
 </style>

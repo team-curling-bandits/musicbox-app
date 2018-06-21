@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <h1>Music Box</h1>
     <nav>
-    <router-link to="/" class="nav">Home</router-link> 
+    <router-link to="/" class="nav" id="home">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
     <router-link to="/public" class="nav">Public Page</router-link>
     <router-link to="/user" class="nav">Users Page</router-link>
@@ -11,8 +10,8 @@
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
-    <pre>{{user}}</pre>
-    <hr>
+    <h1 class="musicbox">Music<span>Box</span></h1>
+    <!-- <pre>{{user}}</pre> -->
 
     <router-view :on-user="handleUser"
     :user="user"
@@ -26,6 +25,7 @@
 export default {
   data() {
     return {
+      backgroundImage: '../images/bg-musicbox.jpg',
       user: null
     };
   },
@@ -56,16 +56,54 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
+  font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  border: 2px solid black;
+  margin-top: 30px;
+  /* border: 2px solid black; */
 }
+
+.musicbox {
+  margin-left: 10px;
+  font-size: 1.5em;
+  position: absolute;
+  top: 1.2%;
+  left: 2%;
+}
+
+span {
+  border: 4px solid #2c3e50;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin: 2px;
+}
+
 .nav {
   margin: 10px;
+}
+
+/* add nav styling so that overflow doesn't run into logo  */
+
+a {
+  height: 25px;
+  padding: 7px;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.router-link-active {
+  color: white;
+}
+
+#home {
+  color: #2c3e50;
 }
 
 </style>

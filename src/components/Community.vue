@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Community Component</h2>
+    <h2>MusicBox Community</h2>
 
     <ul v-if="users">
       <li 

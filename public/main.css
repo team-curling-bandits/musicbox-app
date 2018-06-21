@@ -1,6 +1,6 @@
 /* Photo by Kat Jayne from Pexels */
 body {
-  background-size: auto;
+  background-size: 110%;
   background-image: url("bg-musicbox.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;

@@ -14,8 +14,8 @@
       v-for="song in savedSongs"
       @click="track = song"
       >
-      <strong>{{song.title}}</strong> by {{song.artist}}</li>
-
+      <strong>{{song.title}}</strong> by {{song.artist}}
+      </li>
     </ul>
   </div>
   <div v-else class="user">

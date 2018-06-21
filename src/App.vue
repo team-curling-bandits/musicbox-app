@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{ 'background-image': 'url(' + '../images/bg-musicbox.jpg' + ')' }">
+  <div id="app">
     <h1>Music Box</h1>
     <nav>
     <router-link to="/" class="nav">Home</router-link> 
@@ -64,10 +64,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   border: 2px solid black;
-  /* background-image: url("../../images/bg-musicbox.jpg"); */
 }
-
-/* Photo by Kat Jayne from Pexels */
 
 .nav {
   margin: 10px;

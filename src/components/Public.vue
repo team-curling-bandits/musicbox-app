@@ -4,7 +4,7 @@
     <form class="search" @submit.prevent="handleSubmit">
       <input type="text" v-model="song" placeholder="search for songs, albums, or artists">
       <button
-        type="submit">submit</button>
+        type="submit">search</button>
     </form>
     <div class="music-player">
       <h2>{{ track.name }}</h2>

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Music<span>Box</span></h1>
     <nav>
     <router-link to="/" class="nav">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
@@ -11,6 +10,7 @@
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
+    <h1>Music<span>Box</span></h1>
     <pre>{{user}}</pre>
 
     <router-view :on-user="handleUser"
@@ -62,8 +62,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
   /* border: 2px solid black; */
+}
+
+h1 {
+  margin-top: 60px;
 }
 
 span {
@@ -75,6 +79,21 @@ span {
 
 .nav {
   margin: 10px;
+}
+
+a {
+  height: 25px;
+  padding: 7px;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.router-link-active {
+  color: white;
 }
 
 </style>

@@ -8,8 +8,8 @@
     </form>
     <div class="music-player">
 
-      <h3>Now Playing: </h3>
       <div v-if="track" class="music-info">
+      <h3>Now Playing: </h3>
         <ul class="info-list">
           <li><b>Title:</b> {{ track.name }}</li>
           <li><b>Artist:</b> {{ track.artistName }}</li>
@@ -92,6 +92,10 @@ ul {
 .music-info {
   margin-bottom: 14px;
   text-align: left;
+}
+
+.music-info h3 {
+  text-align: center;
 }
 
 .info-list {

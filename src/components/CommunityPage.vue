@@ -2,7 +2,7 @@
   <div>
     <h2>Community Page Component</h2>
 
-    <h3>Songs saved by { user.name }}</h3>
+    <h3>Songs saved by {{ user.name }}</h3>
     <div>
       <h3>{{ track.title }}</h3>
       <h3>{{ track.artist }}</h3>

@@ -1,5 +1,6 @@
 const URL = 'http://localhost:3000/api';
 const searchUrl = 'https://api.napster.com/v2.2/search?query=';
+const newsUrl = 'https://newsapi.org/v2/everything?sources=entertainment-weekly&q=music&sortBy=publishedAt&pageSize=10&apiKey=9fa47f32b7bd438a93898938d10d85ad';
 const MUSICBOX_URL = `${URL}/musicbox`;
 const USERS_URL = `${URL}/users`;
 const SAVEDSONGS_URL = `${URL}/savedsongs`;
@@ -43,6 +44,11 @@ export function searchSong(song) {
     .then(responseHandler);
 }
 
+export function getNews() {
+  return fetch(newsUrl)
+    .then(responseHandler);
+}
+
 export function getUsers() {
   return fetch(USERS_URL, {
     headers: { 'Content-Type': 'application/json' }
@@ -54,11 +60,18 @@ export function getUser(id) {
   return fetch(`${URL}/users/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
-    .then(responseHandler);
+    .then(responseHandler); 
 }
 
-export function getSavedSongs() {
-  return fetch(SAVEDSONGS_URL, {
+export function getSavedSongs(id) {
+  return fetch(`${SAVEDSONGS_URL}/${id}`, {
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(responseHandler);
+}
+export function deleteSong(id) {
+  return fetch(`${SAVEDSONGS_URL}/${id}`, {
+    method: 'DELETE',
     headers: { 'Content-Type': 'application/json' }
   })
     .then(responseHandler);

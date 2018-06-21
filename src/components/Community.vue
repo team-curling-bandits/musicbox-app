@@ -8,7 +8,7 @@
         :key="user.id"
       >
         <router-link :to="`/community/${user.id}`">
-        {{ user.name }} {{ user.song_id }}
+        {{ user.name }}
         </router-link>
       </li>
     </ul>

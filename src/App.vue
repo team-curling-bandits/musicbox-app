@@ -10,8 +10,8 @@
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
-    <h1>Music<span>Box</span></h1>
-    <pre>{{user}}</pre>
+    <!-- <h1>Music<span>Box</span></h1> -->
+    <!-- <pre>{{user}}</pre> -->
 
     <router-view :on-user="handleUser"
     :user="user"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Public page</h1>
+    <h1>Search for songs:</h1>
     <form class="search" @submit.prevent="handleSubmit">
       <input type="text" v-model="song" placeholder="search for songs, albums, or artists">
       <button

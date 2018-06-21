@@ -73,7 +73,7 @@ export default {
 }
 
 span {
-  border: 4px solid #2c3e50;
+  border: 2px solid #2c3e50;
   padding-left: 2px;
   padding-right: 2px;
   margin: 2px;
@@ -84,6 +84,9 @@ span {
 }
 
 /* add nav styling so that overflow doesn't run into logo  */
+nav {
+  margin-bottom: 60px;
+}
 
 a {
   height: 25px;

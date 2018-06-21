@@ -60,11 +60,18 @@ export function getUser(id) {
   return fetch(`${URL}/users/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
-    .then(responseHandler);
+    .then(responseHandler); 
 }
 
-export function getSavedSongs() {
-  return fetch(SAVEDSONGS_URL, {
+export function getSavedSongs(id) {
+  return fetch(`${SAVEDSONGS_URL}/${id}`, {
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(responseHandler);
+}
+export function deleteSong(id) {
+  return fetch(`${SAVEDSONGS_URL}/${id}`, {
+    method: 'DELETE',
     headers: { 'Content-Type': 'application/json' }
   })
     .then(responseHandler);

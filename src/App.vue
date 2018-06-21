@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-    <router-link to="/" class="nav">Home</router-link> 
+    <router-link to="/" class="nav" id="home">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
     <router-link to="/public" class="nav">Public Page</router-link>
     <router-link to="/user" class="nav">Users Page</router-link>
@@ -94,6 +94,10 @@ a:hover {
 
 .router-link-active {
   color: white;
+}
+
+#home {
+  color: #2c3e50;
 }
 
 </style>

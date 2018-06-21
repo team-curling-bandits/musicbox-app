@@ -10,7 +10,7 @@
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
-    <!-- <h1>Music<span>Box</span></h1> -->
+    <h1 class="musicbox">Music<span>Box</span></h1>
     <!-- <pre>{{user}}</pre> -->
 
     <router-view :on-user="handleUser"
@@ -66,8 +66,12 @@ export default {
   /* border: 2px solid black; */
 }
 
-h1 {
-  margin-top: 60px;
+.musicbox {
+  margin-left: 10px;
+  font-size: 1.5em;
+  position: absolute;
+  top: 1.2%;
+  left: 2%;
 }
 
 span {
@@ -80,6 +84,8 @@ span {
 .nav {
   margin: 10px;
 }
+
+/* add nav styling so that overflow doesn't run into logo  */
 
 a {
   height: 25px;

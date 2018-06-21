@@ -4,7 +4,7 @@
     <router-link to="/" class="nav" id="home">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
     <router-link to="/browse" class="nav">Browse</router-link>
-    <router-link to="/user" class="nav">Users Page</router-link>
+    <router-link to="/user" class="nav">User Page</router-link>
     <router-link to="/community" class="nav">Community</router-link>
     <router-link to="/news" class="nav">News</router-link>
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>

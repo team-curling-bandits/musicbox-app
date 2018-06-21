@@ -1,11 +1,14 @@
 <template>
   <div>
-    <h2>Community Page Component</h2>
-
     <h3 v-if="user">Songs saved by {{ user.name }}</h3>
-    <div>
-      <h3>{{ track.title }}</h3>
-      <h3>{{ track.artist }}</h3>
+    <div class="player">
+      <div v-if="track" class="music-info">
+        <h3>Now Playing: </h3>
+        <ul class="info-list">
+          <li><b>Title:</b> {{ track.title }}</li>
+          <li><b>Artist:</b> {{ track.artist }}</li>
+        </ul>
+      </div>
       <audio controls v-if="track" :src="track.url"></audio>
     </div>
     <ul>
@@ -50,5 +53,31 @@ export default {
 </script>
 
 <style>
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 500px;
+  margin: auto;
+}
 
+.music-info {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.music-info h3 {
+  text-align: center;
+}
+
+.info-list {
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+.player {
+  margin-bottom: 20px; 
+}
 </style>

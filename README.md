@@ -1,11 +1,11 @@
 # MusicBox
-One Paragraph of project description goes here
+MusicBox is a social networking web app around music. You can create a profile, search for songs, and add them to your profile. You can view your friends' profiles and see what music they've saved as well. There is also a News page that shows the latest happenings in the music world.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
-* Node.js with NPM
+* Node.js and Express
 * Install PostgreSQL 
 
 ## Installing
@@ -15,7 +15,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Start server with npm on local host.
 
 ## Deployment
-Add additional notes about how to deploy this on a live system - We will be deploying in Heroku. 
+We will be deploying in Heroku. 
 
 ### Built With
 * Vue.js 
@@ -23,17 +23,11 @@ Add additional notes about how to deploy this on a live system - We will be depl
 * Express.js
 * PostgreSQL
 
-### Contributing
-MAY ADD THIS LATER:
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
 ### Authors
 Mariah Adams, Chris Golden, Carmen Ramos, and Injoong Yoon
 
 #### License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-#### Acknowledgments
-Hat tip to anyone whose code was used
-Inspiration
-etc
+#### Acknowledgements
+We use the Napster API and the NewsAPI.

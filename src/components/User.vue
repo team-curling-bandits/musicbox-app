@@ -15,12 +15,13 @@
     </div>
     <div class="saved-songs">
       <li 
-      :key="song.id" 
-      v-for="song in savedSongs"
-      @click="track = song"
+        :key="song.id" 
+        v-for="song in savedSongs"
+        @click="track = song"
       >
-      <strong>{{song.title}}</strong> by {{song.artist}}
+        <strong>{{song.title}}</strong> by {{song.artist}}
       </li>
+      <h3 id="conditional-prompt" v-if="savedSongs.length === 0 || savedSongs === null">Add some songs!</h3>
     </div>
   </div>
   <div v-else class="user">
@@ -119,6 +120,9 @@ li {
 
 .music-player {
   margin-bottom: 20px; 
+}
 
+#conditional-prompt {
+  text-align: center;
 }
 </style>

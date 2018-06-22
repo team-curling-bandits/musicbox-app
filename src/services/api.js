@@ -1,3 +1,4 @@
+// const URL = '/api';
 const URL = 'http://localhost:3000/api';
 const searchUrl = 'https://api.napster.com/v2.2/search?query=';
 const newsUrl = 'https://newsapi.org/v2/everything?sources=mtv-news&q=music&sortBy=publishedAt&pageSize=50&apiKey=9fa47f32b7bd438a93898938d10d85ad';

@@ -16,9 +16,10 @@
           <li><b>Album:</b> {{ track.albumName }}</li>
         </ul>
       </div>
-      
-      <audio controls v-if="track" :src="track.previewURL"></audio>
-      <button :disabled="isDisabled" @click="handleAdd" v-if="track">Add to profile</button>
+      <div v-if="track">
+        <audio controls :src="track.previewURL"></audio>
+        <button :disabled="isDisabled" @click="handleAdd" v-if="user">Add to profile</button>
+      </div>
     </div>
     <h2 v-if="musicList">Results:</h2>
     <section v-if="musicList">

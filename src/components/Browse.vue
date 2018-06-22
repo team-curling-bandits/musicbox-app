@@ -21,16 +21,18 @@
       <button :disabled="isDisabled" @click="handleAdd" v-if="track">Add to profile</button>
     </div>
     <h2 v-if="musicList">Results:</h2>
-    <ul class="results">
-      <li 
-        :key="music.id"
-        v-for="music in musicList"
-        @click="track = music, isDisabled = false"
-      >
-        <strong>{{ music.name }}</strong>
-        {{ music.artistName }}
-      </li>
-    </ul>
+    <section v-if="musicList">
+      <ul class="results">
+        <li 
+          :key="music.id"
+          v-for="music in musicList"
+          @click="track = music, isDisabled = false"
+        >
+          <strong>{{ music.name }}</strong>
+          by {{ music.artistName }} 
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
 
@@ -87,6 +89,19 @@ ul {
   justify-content: center;
   max-width: 500px;
   margin: auto;
+}
+
+section {
+  object-fit: contain;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 1.2em;
+  padding: 20px 10px 20px 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .music-info {

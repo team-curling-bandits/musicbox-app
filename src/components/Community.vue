@@ -2,18 +2,20 @@
   <div>
     <h2>MusicBox Community</h2>
 
-    <ul class="user-tile-area" v-if="users">
-      <li
-        v-for="user in users"
-        :key="user.id"
-      >
-        <router-link
-        class="user-tile"  
-         :to="`/community/${user.id}`">
-        {{ user.name }}
-        </router-link>
-      </li>
-    </ul>
+    <section>
+      <ul class="user-tile-area" v-if="users">
+        <li
+          v-for="user in users"
+          :key="user.id"
+        >
+          <router-link
+          class="user-tile"  
+          :to="`/community/${user.id}`">
+          {{ user.name }}
+          </router-link>
+        </li>
+      </ul>
+    </section>
 
     <router-view>
       :users="users"
@@ -53,5 +55,9 @@ h2 {
 
 .user-tile {
   font-size: 30px;
+}
+
+section {
+  padding: 
 }
 </style>

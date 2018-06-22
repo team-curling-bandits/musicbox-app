@@ -11,15 +11,17 @@
       </div>
       <audio controls v-if="track" :src="track.url"></audio>
     </div>
-    <ul>
-      <li 
-        :key="song.id" 
-        v-for="song in savedSongs"
-        @click="track = song"
-        >
-        <strong>{{song.title}}</strong> by {{ song.artist }}
-        </li>
-    </ul>
+    <section class="community-page">
+      <ul class="community-list">
+        <li 
+          :key="song.id" 
+          v-for="song in savedSongs"
+          @click="track = song"
+          >
+          <strong>{{song.title}}</strong> by {{ song.artist }}
+          </li>
+      </ul>
+    </section>
   </div> 
 </template>
 
@@ -61,6 +63,22 @@ ul {
   justify-content: center;
   max-width: 500px;
   margin: auto;
+}
+
+.community-page {
+  object-fit: contain;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 20px 10px 20px 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.community-list {
+  padding-left: 10px;
 }
 
 .music-info {

@@ -24,7 +24,6 @@
 export default {
   data() {
     return {
-      backgroundImage: '../images/bg-musicbox.jpg',
       user: null
     };
   },
@@ -55,7 +54,6 @@ export default {
 
 <style>
 #app {
-  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,9 +61,11 @@ export default {
   color: #2c3e50;
   margin-top: 30px;
 }
+
 a:hover {
   cursor: pointer;
 }
+
 .musicbox {
   margin-top: 0px;
   margin-left: 10px;
@@ -86,16 +86,16 @@ span {
   margin: 10px;
 }
 
-/* add nav styling so that overflow doesn't run into logo  */
 nav {
 
   margin-bottom: 30px;
   font-size: 20px;
 }
+
 li {
-  font-weight: bold;
   font-size: 20px;
 }
+
 a {
   height: 25px;
   padding: 7px;

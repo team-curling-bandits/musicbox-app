@@ -18,14 +18,14 @@
       </div>
       
       <audio controls v-if="track" :src="track.previewURL"></audio>
-      <button @click="handleAdd" v-if="track">Add to profile</button>
+      <button :disabled="isDisabled" @click="handleAdd" v-if="track">Add to profile</button>
     </div>
     <h2 v-if="musicList">Results:</h2>
     <ul class="results">
       <li 
         :key="music.id"
         v-for="music in musicList"
-        @click="track = music"
+        @click="track = music, isDisabled = false"
       >
         <strong>{{ music.name }}</strong>
         {{ music.artistName }}
@@ -42,7 +42,8 @@ export default {
     return {
       musicList: null,
       song: '',
-      track: ''
+      track: '',
+      isDisabled: false
     };
   },
   props: ['user'],
@@ -61,7 +62,7 @@ export default {
       track.url = this.track.previewURL;
 
       return saveSong(track)
-        .then(alert(this.track.name + ' Saved!'));
+        .then(alert(this.track.name + ' Saved!', this.isDisabled = true));
     }
   }
 };

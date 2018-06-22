@@ -70,7 +70,7 @@ export default {
   align-items: flex-start;
   margin: 0 auto;
   text-align: left;
-  width: 80%;
+  width: 65%;
   margin-top: 40px;
   margin-bottom: 40px;
 }

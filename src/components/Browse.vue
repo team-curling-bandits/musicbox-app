@@ -9,12 +9,12 @@
     <div class="music-player">
 
       <div v-if="track" class="music-info">
+        <div class="info-list">
       <h3>Now Playing: </h3>
-        <ul class="info-list">
-          <li><b>Title:</b> {{ track.name }}</li>
-          <li><b>Artist:</b> {{ track.artistName }}</li>
-          <li><b>Album:</b> {{ track.albumName }}</li>
-        </ul>
+          <p><b>Title:</b> {{ track.name }}</p>
+          <p><b>Artist:</b> {{ track.artistName }}</p>
+          <p><b>Album:</b> {{ track.albumName }}</p>
+        </div>
       </div>
       <div v-if="track">
         <audio controls :src="track.previewURL"></audio>
@@ -81,7 +81,9 @@ export default {
 input {
   width: 200px;
 }
-
+p {
+  margin: 3px;
+}
 ul {
   list-style-type: none;
   display: flex;
@@ -106,6 +108,7 @@ section {
 }
 
 .music-info {
+  
   margin-bottom: 14px;
   text-align: left;
 }

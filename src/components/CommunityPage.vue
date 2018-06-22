@@ -93,6 +93,8 @@ ul {
 .info-list {
   line-height: 20px;
   margin-top: 4px;
+  width: 400px;
+  align-items: center;
 }
 
 .player {

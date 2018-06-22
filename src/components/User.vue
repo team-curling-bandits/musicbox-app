@@ -13,7 +13,7 @@
       <audio controls v-if="track" :src="track.url"></audio>
       <button @click="handleDelete" v-if="track">Delete Song from list</button>
     </div>
-    <div class="saved-songs">
+    <div class="saved-songs" v-if="savedSongs">
       <li 
         :key="song.id" 
         v-for="song in savedSongs"

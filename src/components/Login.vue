@@ -1,7 +1,8 @@
 <template>
 <div class="auth">
   <h2>{{ label }}</h2>
-  <p>
+  <form @submit.prevent="handleSubmit">
+  <p class="signup">
     <a href="" @click.prevent="type = isSignUp ? 'signIn' : 'signUp'">
       {{
         isSignUp
@@ -10,7 +11,6 @@
       }}
     </a>
   </p>
-  <form @submit.prevent="handleSubmit">
     <FormControl v-if="isSignUp" label="Name">
       <input required v-model="credentials.name">
     </FormControl>
@@ -104,5 +104,10 @@ form {
 
 .submit-btn {
   margin-top: 6px;
+}
+
+.signup {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 </style>

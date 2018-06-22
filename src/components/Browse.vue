@@ -20,7 +20,7 @@
       <audio controls v-if="track" :src="track.previewURL"></audio>
       <button @click="handleAdd" v-if="track">Add to profile</button>
     </div>
-    <h2>Results:</h2>
+    <h2 v-if="musicList">Results:</h2>
     <ul class="results">
       <li 
         :key="music.id"
@@ -42,8 +42,7 @@ export default {
     return {
       musicList: null,
       song: '',
-      track: '',
-      selected: null
+      track: ''
     };
   },
   props: ['user'],

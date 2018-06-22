@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 class="musicbox">Music<span>Box</span></h1>
     <nav>
     <router-link to="/" class="nav" id="home">Home</router-link> 
     <router-link to="/about" class="nav">About Us</router-link>
@@ -10,7 +11,6 @@
     <router-link v-if="!user" to="/login" class="nav">Sign In</router-link>
       <a v-else @click.prevent="handleLogout">Logout</a>
     </nav>
-    <h1 class="musicbox">Music<span>Box</span></h1>
 
     <router-view :on-user="handleUser"
     :user="user"
@@ -63,11 +63,14 @@ export default {
   color: #2c3e50;
   margin-top: 30px;
 }
-
+a:hover {
+  cursor: pointer;
+}
 .musicbox {
+  margin-top: 0px;
   margin-left: 10px;
   font-size: 1.5em;
-  position: absolute;
+  float: left;
   top: 1.2%;
   left: 2%;
 }
@@ -85,7 +88,8 @@ span {
 
 /* add nav styling so that overflow doesn't run into logo  */
 nav {
-  margin-bottom: 60px;
+
+  margin-bottom: 30px;
   font-size: 20px;
 }
 li {

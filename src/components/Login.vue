@@ -30,8 +30,8 @@
           {{ label }}
         </button>
     </FormControl>
+    <pre class="error" v-show="error">{{ error }}</pre>
   </form>
-  <pre class="error" v-show="error">{{ error }}</pre>
 </div>
 </template>
 
@@ -109,5 +109,9 @@ form {
 .signup {
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.error {
+  color: red;
 }
 </style>

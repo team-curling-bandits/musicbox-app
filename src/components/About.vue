@@ -27,7 +27,7 @@
         <h3>Carmen Ramos</h3>
         <p>Carmen is responsible for taking the Curlng Bandits from good to great. Whether she's throwing a guard, draw, or
           takeout, she always hits her mark. When she's not playing "the Roaring Game", which is curling, she can be 
-          found walking, programming, and drying fruit.
+          found cooking, programming, and drying fruit.
         </p>
       </section>
     </section>

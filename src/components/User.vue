@@ -40,10 +40,12 @@ export default {
   },
   props: ['user'],
   created() {
-    getSavedSongs(this.user.id) 
-      .then(songs => {
-        this.savedSongs = songs;
-      });
+    if(this.user) {
+      getSavedSongs(this.user.id) 
+        .then(songs => {
+          this.savedSongs = songs;
+        });
+    }
   },
   methods: {
     handleDelete() {

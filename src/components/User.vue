@@ -71,11 +71,20 @@ export default {
 .user {
   text-align: center;
 }
-.saved-songs {
 
+.saved-songs {
+  object-fit: contain;
+  width: 350px;
   margin: auto;
-  width: 480px;
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 1.2em;
+  padding: 20px 0px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 a {
   color: white;
 }

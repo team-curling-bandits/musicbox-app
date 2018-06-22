@@ -21,7 +21,7 @@
       <button :disabled="isDisabled" @click="handleAdd" v-if="track">Add to profile</button>
     </div>
     <h2 v-if="musicList">Results:</h2>
-    <section>
+    <section v-if="musicList">
       <ul class="results">
         <li 
           :key="music.id"

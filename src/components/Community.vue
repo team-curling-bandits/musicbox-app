@@ -56,8 +56,4 @@ h2 {
 .user-tile {
   font-size: 30px;
 }
-
-section {
-  padding: 
-}
 </style>

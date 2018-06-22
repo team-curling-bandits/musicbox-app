@@ -15,18 +15,18 @@
       <input required v-model="credentials.name">
     </FormControl>
 
-    <FormControl label="Email">
+    <FormControl label="Email:">
       <input required v-model="credentials.email">
     </FormControl>
 
-    <FormControl label="Password">
+    <FormControl label="Password:">
       <input :type="show ? 'text' : 'password' " v-model="credentials.password">
-      <button @click="show = !show" type="button">
+      <button @click="show = !show" type="button" class="show-btn">
         {{ show ? 'Hide' : 'Show' }}
       </button>
     </FormControl>
     <FormControl>
-        <button type="submit">
+        <button type="submit" class="submit-btn">
           {{ label }}
         </button>
     </FormControl>
@@ -86,5 +86,23 @@ export default {
 </script>
 
 <style>
+form {
+  object-fit: contain;
+  width: 300px;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 20px 0px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 
+.show-btn {
+  margin-left: 6px;
+}
+
+.submit-btn {
+  margin-top: 6px;
+}
 </style>

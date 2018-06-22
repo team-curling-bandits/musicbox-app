@@ -2,7 +2,7 @@
   <div>
     <h1>Music<span>Box</span></h1>
     <section>
-    <p class="intro-description">Welcome to <strong>MusicBox!</strong>This site allows you to search and listen to your
+    <p class="intro-description">Welcome to <strong>MusicBox!</strong> This site allows you to search and listen to your
       favorite music.
     </p>
     <p class="intro-description"><router-link to="/login" class="nav">

@@ -74,7 +74,7 @@ export default {
 .saved-songs {
 
   margin: auto;
-  width: 600px;
+  width: 480px;
 }
 a {
   color: white;
@@ -94,7 +94,11 @@ ul {
   margin-bottom: 14px;
   text-align: left;
 }
-
+li {
+  
+  list-style: none;
+  text-align: start;
+}
 .music-info h3 {
   text-align: center;
 }

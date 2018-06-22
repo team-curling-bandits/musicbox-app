@@ -2,8 +2,19 @@
   <div>
     <h1>Music<span>Box</span></h1>
     <section>
-    <p>Welcome to <strong> MusicBox! </strong>This site allows you to search and listen to your favorite music. </p><p><router-link to="/login" class="nav"><strong>Sign up</strong></router-link> to save your favorites into your own  profile page which you can edit anytime.  As an added bonus, you will be able to see other people's profiles and listen to their favorites.</p><p>We also included a <router-link to="/news" class="nav"><strong>News</strong></router-link> tab to get you 'in the know' of the happennings in the music world.</p>
-    <p>Click <router-link to="/browse" class="nav"><strong>HERE</strong></router-link> to get started!</p>
+    <p class="intro-description">Welcome to <strong>MusicBox!</strong>This site allows you to search and listen to your
+      favorite music.
+    </p>
+    <p class="intro-description"><router-link to="/login" class="nav">
+      <strong>Sign up</strong></router-link> to save your favorites into your own  profile page which you can edit anytime.
+      As an added bonus, you will be able to see other people's profiles and listen to their favorites.
+    </p>
+    <p class="intro-description">We also included a <router-link to="/news" class="nav"><strong>News</strong></router-link>
+      tab to get you 'in the know' of the happennings in the music world.
+    </p>
+    <p class="intro-description">Click <router-link to="/browse" class="nav"><strong>HERE</strong></router-link>
+      to get started!
+    </p>
     </section>
   </div>
 </template>
@@ -54,5 +65,9 @@ a {
 
 a.nav {
   padding: 2px;
+}
+
+.intro-description {
+  margin-bottom: 20px;
 }
 </style>

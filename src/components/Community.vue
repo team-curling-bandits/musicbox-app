@@ -2,12 +2,14 @@
   <div>
     <h2>MusicBox Community</h2>
 
-    <ul v-if="users">
-      <li 
+    <ul class="user-tile-area" v-if="users">
+      <li
         v-for="user in users"
         :key="user.id"
       >
-        <router-link :to="`/community/${user.id}`">
+        <router-link
+        class="user-tile"  
+         :to="`/community/${user.id}`">
         {{ user.name }}
         </router-link>
       </li>
@@ -41,5 +43,15 @@ export default {
 </script>
 
 <style>
+h2 {
+  font-size: 40px;
+}
 
+.user-tile-area {
+  width: 600px;
+}
+
+.user-tile {
+  font-size: 30px;
+}
 </style>

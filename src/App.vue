@@ -86,8 +86,12 @@ span {
 /* add nav styling so that overflow doesn't run into logo  */
 nav {
   margin-bottom: 60px;
+  font-size: 20px;
 }
-
+li {
+  font-weight: bold;
+  font-size: 20px;
+}
 a {
   height: 25px;
   padding: 7px;

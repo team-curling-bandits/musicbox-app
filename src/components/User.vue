@@ -8,7 +8,7 @@
       <audio controls v-if="track" :src="track.url"></audio>
       <button @click="handleDelete" v-if="track">Delete Song from list</button>
     </div>
-    <ul>
+    <div class="saved-songs">
       <li 
       :key="song.id" 
       v-for="song in savedSongs"
@@ -16,7 +16,7 @@
       >
       <strong>{{song.title}}</strong> by {{song.artist}}
       </li>
-    </ul>
+    </div>
   </div>
   <div v-else class="user">
     <p>Please <router-link to="/login">sign in</router-link> to view your profile</p>
@@ -66,8 +66,16 @@ export default {
 .user {
   text-align: center;
 }
+.saved-songs {
 
+  margin: auto;
+  width: 600px;
+}
 a {
   color: white;
+}
+li {
+  text-align: start;
+  list-style: none
 }
 </style>

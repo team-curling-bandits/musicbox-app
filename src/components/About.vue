@@ -43,6 +43,9 @@
     </section>
     <div class="logo">
       <img src="../../images/logo-curling-bandits.png" alt="curling bandits logo">
+      <p>Copyright &copy; 2018. <a target="_blank" href="https://github.com/team-curling-bandits">GitHub</a> &middot;
+        <a target="_blank" href="https://github.com/team-curling-bandits/musicbox-app/blob/master/LICENSE.md">License</a>
+      </p>
     </div>
   </div>
 </template>
